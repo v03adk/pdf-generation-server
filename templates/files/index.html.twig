@@ -1,0 +1,15 @@
+{% extends "@Theme/layout.html.twig" %}
+
+{% block content %}
+    <h1>Files ({{files|length}})</h1>
+
+    <ul>
+        {% for file in files %}
+        <li>
+            #{{ file.id }} {{ file.createdAt }} <a href="{{ path("files_download", {"fileId": file.id }) }}"><i>download</i></a>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

@@ -41,6 +41,15 @@ templates_delete:
     path: /templates/{templateId}/delete
     defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\TemplateController::deleteAction }
 
+# Files
+files_index:
+    path: /files
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\FileController::indexAction }
+
+files_download:
+    path: /files/{fileId}/download
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\FileController::downloadAction }
+
 # API routes
 
 api_root:

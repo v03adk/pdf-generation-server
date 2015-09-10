@@ -32,7 +32,7 @@ class PdoFileRepository
     public function getAll()
     {
         $statement = $this->pdo->prepare(
-            "SELECT * FROM file"
+            "SELECT * FROM file ORDER BY created_at DESC"
         );
         $statement->execute();
         $rows = $statement->fetchAll();

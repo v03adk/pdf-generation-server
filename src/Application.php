@@ -156,6 +156,7 @@ class Application extends SilexApplication
         $this['security.access_rules'] = array(
             array('^/templates/add$', 'ROLE_ADMIN'),
             array('^/templates/\d\edit$', 'ROLE_ADMIN'),
+            array('^/files', 'ROLE_ADMIN'),
         );
     }
 
