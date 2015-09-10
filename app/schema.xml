@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema>
+    <table name="thing">
+        <column name="id" type="integer" unsigned="true" autoincrement="true"/>
+        <column name="name" type="string" length="64" />
+        <column name="email" type="string" length="64" />
+        <column name="description" type="text" />
+        <index name="primary" primary="true" columns="id" />
+    </table>
+
+    <table name="template">
+        <column name="id" type="integer" unsigned="true" autoincrement="true"/>
+        <column name="name" type="string" length="256" />
+        <column name="path" type="string" length="512" />
+        <column name="description" type="text" />
+        <column name="created_at" type="datetime" />
+        <column name="edited_at" type="datetime" />
+        <index name="primary" primary="true" columns="id" />
+    </table>
+
+    <table name="file">
+        <column name="id" type="string" length="36"/>
+        <column name="path" type="string" length="512" />
+        <column name="created_at" type="datetime" />
+        <index name="primary" primary="true" columns="id" />
+    </table>
+</schema>

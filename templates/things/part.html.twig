@@ -1,0 +1,19 @@
+
+<h1>Things ({{things|length}})</h1>
+
+<ul>
+    {% for thing in things %}
+        <li>
+            <a href="{{ path("things_view", {"thingId": thing.id })}}">#{{ thing.id }}: {{ thing.name }}</a>
+            <br />
+            <i>{{thing.description}}</i>
+        </li>
+    {% endfor %}
+</ul>
+
+<div class="buttonbox">
+    <a href="{{ path('things_add') }}" class="btn btn-primary" role="button">
+        <i class="fa fa-plus"></i>
+        Add
+    </a>
+</div>

@@ -1,0 +1,15 @@
+debug: false
+baseurl: /
+pdo: mysql://username:password@localhost/skeleton
+
+security:
+    # encoder: PlaintextPasswordEncoder
+    providers:
+        http:
+            users:
+                user: { password: user, roles: ['ROLE_USER'] }
+                admin: { password: admin, roles: ['ROLE_ADMIN'] }
+        UserBase:
+            url: userbase_api_url
+            username: userbase_username
+            password: userbase_password

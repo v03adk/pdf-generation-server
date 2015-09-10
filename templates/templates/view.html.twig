@@ -1,0 +1,24 @@
+{% extends "@Theme/layout.html.twig" %}
+
+{% block content %}
+    <h1>Template ({{template.getId()}})</h1>
+    
+    ID: {{template.getId}}<br />
+    Name: {{template.getName}}<br />
+    Path: {{template.getPath}}<br />
+    Description: {{template.getDescription}}<br />
+    CreatedAt: {{template.getCreatedAt}}<br />
+    EditedAt: {{template.getEditedAt}}<br />
+    
+    <div class="buttonbox">
+        <a href="{{ path('templates_index' )}}" class="btn btn-default">Back</a>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('templates_edit', {'templateId': template.getId()}) }}" class="btn btn-primary" role="button">
+                <i class="fa fa-edit"></i>
+                Edit
+            </a>
+        {% endif %}
+    </div>
+    
+{% endblock %}

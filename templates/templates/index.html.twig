@@ -1,0 +1,25 @@
+{% extends "@Theme/layout.html.twig" %}
+
+{% block content %}
+    <h1>Templates ({{templates|length}})</h1>
+
+    <ul>
+        {% for template in templates %}
+        <li>
+            <a href="{{ path("templates_view", {"templateId": template.getId() })}}">#{{ template.id }}: {{ template.name }}</a>
+            <br />
+            <i>{{template.description}}</i>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="buttonbox">
+            <a href="{{ path('templates_add') }}" class="btn btn-primary" role="button">
+                <i class="fa fa-plus"></i>
+                Add
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}

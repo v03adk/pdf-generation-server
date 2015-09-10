@@ -1,0 +1,70 @@
+frontpage:
+    path: /
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::frontpageAction }
+
+
+# Authentication
+login:
+    path: /login
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\AuthenticationController::loginAction }
+    
+login_check:
+    path: /authentication/login_check
+
+# Assets
+
+assets_style_css:
+    path: /assets/style.css
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\AssetsController::styleAction }
+
+assets:
+    path: /assets/{postfix}
+    defaults: { _controller: LinkORB\PdfGenerationServer\Controller\AssetsController::serveAction }
+    requirements:
+        postfix: .+
+        
+# CRUD example
+things_index:
+    path: /things
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::indexAction }
+
+things_add:
+    path: /things/add
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::addAction }
+things_view:
+    path: /things/{thingId}
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::viewAction }
+things_edit:
+    path: /things/{thingId}/edit
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::editAction }
+things_delete:
+    path: /things/{thingId}/delete
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::deleteAction }
+
+# Templates
+templates_index:
+    path: /templates
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\TemplateController::indexAction }
+
+templates_add:
+    path: /templates/add
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\TemplateController::addAction }
+templates_view:
+    path: /templates/{templateId}
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\TemplateController::viewAction }
+templates_edit:
+    path: /templates/{templateId}/edit
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\TemplateController::editAction }
+templates_delete:
+    path: /templates/{templateId}/delete
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\TemplateController::deleteAction }
+
+# API routes
+
+api_root:
+    path: /api/v1
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ApiController::rootAction }
+
+api_get_file:
+    path: /api/v1/file/{fileId}
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ApiController::downloadFileAction }

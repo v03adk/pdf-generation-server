@@ -1,0 +1,18 @@
+# Parameters
+/app/config/parameters.yml
+
+# Managed by Composer
+/vendor/
+/assets/bower/
+
+# Composer PHAR
+/composer.phar
+
+# Mac
+.DS_Store
+
+# Project
+*.sublime-*
+.idea/
+files/*
+!files/.gitkeep
