@@ -33,7 +33,8 @@ class ApiController
         if (!$template)
             return new JsonResponse(['error' => "template $templateName not found"], 404);
 
-        $html = $app['twig']->render($template->getPath(), $templateData);
+        $twig = new \Twig_Environment(new \Twig_Loader_String());
+        $html = $twig->render($template->getTemplate(), $templateData);
 
         $file = new File();
         $file->setId(Uuid::uuid4()->toString());
@@ -53,7 +54,7 @@ class ApiController
         $repo = $app->getFileRepository();
         $repo->add($file);
 
-        return new JsonResponse(['id' => $file->getId()], 200);
+        return new JsonResponse(['id' => $file->getId()], 201);
     }
 
     public function downloadFileAction(Application $app, Request $request, $fileId)

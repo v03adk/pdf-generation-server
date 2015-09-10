@@ -181,19 +181,13 @@ class Application extends SilexApplication
         throw new RuntimeException('Cannot find any security provider');
     }
 
-    private $thingRepository;
+
     private $templateRepository;
     private $fileRepository;
     private function configureRepositories()
     {
-        $this->thingRepository = new PdoThingRepository($this->pdo);
         $this->templateRepository = new PdoTemplateRepository($this->pdo);
         $this->fileRepository = new PdoFileRepository($this->pdo);
-    }
-
-    public function getThingRepository()
-    {
-        return $this->thingRepository;
     }
 
     public function getTemplateRepository()

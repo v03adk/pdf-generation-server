@@ -76,14 +76,14 @@ class PdoTemplateRepository
     {
         $statement = $this->pdo->prepare(
             "UPDATE template
-             SET name=:name, path=:path, description=:description, edited_at=:edited_at, created_at=:created_at
+             SET name=:name, template=:template, description=:description, edited_at=:edited_at, created_at=:created_at
              WHERE id=:id"
         );
 
         $st = [
             'id' => $template->getId(),
             'name' => $template->getName(),
-            'path' => $template->getPath(),
+            'path' => $template->getTemplate(),
             'description' => $template->getDescription(),
             'edited_at' => date('Y-m-d H:i:s'),
         ];
@@ -120,7 +120,7 @@ class PdoTemplateRepository
         $obj = new Template();
         $obj->setId($row['id'])
             ->setName($row['name'])
-            ->setPath($row['path'])
+            ->setTemplate($row['template'])
             ->setDescription($row['description'])
             ->setEditedAt($row['edited_at'])
             ->setCreatedAt($row['created_at']);

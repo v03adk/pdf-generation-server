@@ -77,14 +77,14 @@ class TemplateController
         } else {
             $defaults = [
                 'name' => $template->getName(),
-                'path' => $template->getPath(),
+                'template' => $template->getTemplate(),
                 'description' => $template->getDescription(),
             ];
         }
 
         $form = $app['form.factory']->createBuilder('form', $defaults)
             ->add('name', 'text')
-            ->add('path', 'text')
+            ->add('template', 'textarea')
             ->add('description', 'textarea', array('required' => false))
             ->getForm();
 
@@ -97,7 +97,7 @@ class TemplateController
                 $template = new Template();
             }
 
-            $template->setPath($data['path'])
+            $template->setTemplate($data['template'])
                 ->setName($data['name'])
                 ->setDescription($data['description']);
 

@@ -32,22 +32,22 @@ class Template
         return $this;
     }
 
-    private $path;
+    private $template;
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getPath()
+    public function getTemplate()
     {
-        return $this->path;
+        return $this->template;
     }
 
     /**
-     * @param mixed $path
+     * @param string $template
      */
-    public function setPath($path)
+    public function setTemplate($template)
     {
-        $this->path = $path;
+        $this->template = $template;
 
         return $this;
     }

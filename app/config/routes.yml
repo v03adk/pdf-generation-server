@@ -1,6 +1,6 @@
 frontpage:
     path: /
-    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::frontpageAction }
+    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\TemplateController::frontpageAction }
 
 
 # Authentication
@@ -23,24 +23,6 @@ assets:
     requirements:
         postfix: .+
         
-# CRUD example
-things_index:
-    path: /things
-    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::indexAction }
-
-things_add:
-    path: /things/add
-    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::addAction }
-things_view:
-    path: /things/{thingId}
-    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::viewAction }
-things_edit:
-    path: /things/{thingId}/edit
-    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::editAction }
-things_delete:
-    path: /things/{thingId}/delete
-    defaults:  { _controller: LinkORB\PdfGenerationServer\Controller\ThingController::deleteAction }
-
 # Templates
 templates_index:
     path: /templates
