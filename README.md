@@ -54,3 +54,5 @@ Now open [http://127.0.0.1:8080](http://127.0.0.1:8080) in your browser.
 
 See the example json data in Templates. Send it to /api/v1 via POST method, response is json with ID of generated pdf file,
 you can download file via GET method /api/v1/file/{ID}, response is json with base64encoded content of file.
+
+Don't forget about basic auth in api calls.
